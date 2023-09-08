@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-import 'package:mybook/constant.dart';
-import 'package:mybook/core/utils/assets.dart';
 import 'package:mybook/feature/Splash/presentation/views/widgets/app_logo.dart';
 
 class SplashAnimatedBuilder extends StatelessWidget {
