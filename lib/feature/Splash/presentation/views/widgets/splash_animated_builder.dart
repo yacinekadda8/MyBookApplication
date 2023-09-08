@@ -1,9 +1,9 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:mybook/constant.dart';
 import 'package:mybook/core/utils/assets.dart';
+import 'package:mybook/feature/Splash/presentation/views/widgets/app_logo.dart';
 
 class SplashAnimatedBuilder extends StatelessWidget {
   const SplashAnimatedBuilder({
@@ -26,14 +26,7 @@ class SplashAnimatedBuilder extends StatelessWidget {
             children: [
               SlideTransition(
                 position: slidingAnimationLogo,
-                child: SizedBox(
-                  child: SvgPicture.asset(MyAssets.mylogo,
-                      fit: BoxFit.fitWidth,
-                      height: Get.width / 5,
-                      colorFilter:
-                          const ColorFilter.mode(primaryColor, BlendMode.srcIn),
-                      semanticsLabel: 'A red up arrow'),
-                ),
+                child: const AppLogo(),
               ),
               SlideTransition(
                 position: slidingAnimationText,
@@ -41,7 +34,7 @@ class SplashAnimatedBuilder extends StatelessWidget {
                   'Read between the lines',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 18,
                   ),
                 ),
               )

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:mybook/feature/Splash/presentation/view/widgets/splash_animated_builder.dart';
+import 'package:get/get.dart';
+import 'package:mybook/constant.dart';
+import 'package:mybook/feature/Splash/presentation/views/widgets/splash_animated_builder.dart';
+import 'package:mybook/feature/home/presntation/views/home_view.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -18,17 +21,21 @@ class _SplashViewBodyState extends State<SplashViewBody>
   @override
   void initState() {
     super.initState();
-
-    // Logo animation
-    initSlidingAnimation();
+    initSlidingAnimation(); // Logo animation init
+    goToHomeView(); // navigation
   }
 
-  @override
-  void dispose() {
-    // Dispose of the AnimationControllers when the state is disposed
-    animationControllerLogo.dispose();
-    animationControllerText.dispose();
-    super.dispose();
+  void goToHomeView() {
+    Future.delayed(
+      const Duration(seconds: 3),
+      () {
+        Get.to(
+          () => const HomeView(),
+          transition: Transition.fade,
+          duration: kTransation,
+        );
+      },
+    );
   }
 
   @override
@@ -63,5 +70,13 @@ class _SplashViewBodyState extends State<SplashViewBody>
     // Start animations
     animationControllerLogo.forward();
     animationControllerText.forward();
+  }
+
+  @override
+  void dispose() {
+    // Dispose of the AnimationControllers when the state is disposed
+    animationControllerLogo.dispose();
+    animationControllerText.dispose();
+    super.dispose();
   }
 }
