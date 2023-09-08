@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       theme: ThemeData().copyWith(
-        scaffoldBackgroundColor: kbackgroundColor,
+        scaffoldBackgroundColor: neutralColor,
       ),
       debugShowCheckedModeBanner: false,
       title: 'MyBook',
