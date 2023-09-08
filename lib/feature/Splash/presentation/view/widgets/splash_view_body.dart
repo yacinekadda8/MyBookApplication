@@ -20,6 +20,29 @@ class _SplashViewBodyState extends State<SplashViewBody>
     super.initState();
 
     // Logo animation
+    initSlidingAnimation();
+  }
+
+  @override
+  void dispose() {
+    // Dispose of the AnimationControllers when the state is disposed
+    animationControllerLogo.dispose();
+    animationControllerText.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: SplashAnimatedBuilder(
+        slidingAnimationLogo: slidingAnimationLogo,
+        slidingAnimationText: slidingAnimationText,
+      ),
+    );
+  }
+
+  void initSlidingAnimation() {
+    // Logo animation
     animationControllerLogo = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 2),
@@ -40,23 +63,5 @@ class _SplashViewBodyState extends State<SplashViewBody>
     // Start animations
     animationControllerLogo.forward();
     animationControllerText.forward();
-  }
-
-  @override
-  void dispose() {
-    // Dispose of the AnimationControllers when the state is disposed
-    animationControllerLogo.dispose();
-    animationControllerText.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: SplashAnimatedBuilder(
-        slidingAnimationLogo: slidingAnimationLogo,
-        slidingAnimationText: slidingAnimationText,
-      ),
-    );
   }
 }
