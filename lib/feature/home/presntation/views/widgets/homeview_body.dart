@@ -12,8 +12,27 @@ class HomeViewBody extends StatelessWidget {
     return const Column(
       children: [
         CustomAppBar(),
-        CustomBookCard(),
+        FeaturedBooksListView(),
       ],
+    );
+  }
+}
+
+class FeaturedBooksListView extends StatelessWidget {
+  const FeaturedBooksListView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: Get.height / 3.5,
+      child: ListView.builder(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          scrollDirection: Axis.horizontal,
+          itemCount: 4,
+          itemBuilder: (context, index) => const Padding(
+                padding: EdgeInsets.only(left: 8.0),
+                child: CustomBookCard(),
+              )),
     );
   }
 }
