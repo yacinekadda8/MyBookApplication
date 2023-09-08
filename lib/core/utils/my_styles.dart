@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 abstract class MyStyles {
   static const titleMedium = TextStyle(
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: FontWeight.w600,
   );
   static const titleLarge = TextStyle(
