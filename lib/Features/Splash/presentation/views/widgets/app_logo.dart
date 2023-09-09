@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
 import 'package:mybook/constant.dart';
 import 'package:mybook/Core/utils/assets.dart';
 
@@ -11,11 +10,13 @@ class AppLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+            double mqwidth = MediaQuery.of(context).size.width;
+
     return SizedBox(
       child: SvgPicture.asset(MyAssets.mylogo,
           fit: BoxFit.fitHeight,
-          height: Get.width / 6,
-          width: Get.width / 3,
+          height: mqwidth / 6,
+          width: mqwidth / 3,
           colorFilter: const ColorFilter.mode(kprimaryColor, BlendMode.srcIn),
           semanticsLabel: 'A red up arrow'),
     );

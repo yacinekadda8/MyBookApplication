@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//MediaQuery.of(context).size;
 const kTransation = Duration(microseconds: 250);
 const kgtSectraFine = 'GT-Sectra-Fine';
 const kprimaryColor = Color(0xFF402E32);

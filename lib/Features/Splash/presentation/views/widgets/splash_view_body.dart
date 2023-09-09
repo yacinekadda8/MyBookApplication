@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:mybook/Core/utils/app_router.dart';
 import 'package:mybook/Features/Splash/presentation/views/widgets/splash_animated_builder.dart';
 
 class SplashViewBody extends StatefulWidget {

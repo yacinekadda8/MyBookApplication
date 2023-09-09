@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mybook/constant.dart';
 import 'package:mybook/Core/utils/assets.dart';
@@ -12,6 +11,8 @@ class BestSellerItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+       double width = MediaQuery.of(context).size.width;
+
     return GestureDetector(
       onTap: ()=> context.go('/bookViewDetails'),
       child: SizedBox(
@@ -38,7 +39,7 @@ class BestSellerItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    width: Get.width / 1.8,
+                    width: width / 1.8,
                     child: Text(
                       'Harry Potter and the Goblet of Fire',
                       maxLines: 2,
