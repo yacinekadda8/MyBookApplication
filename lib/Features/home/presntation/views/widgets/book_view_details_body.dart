@@ -15,7 +15,7 @@ class BookViewDetailsBody extends StatelessWidget {
           children: [
             CustomBookDetailsAppbar(),
             MySpace.h20Space,
-            CustomBookCard(height: 2.4),
+            CustomBookCoverImg(height: 2.5),
           ],
         ),
       ),

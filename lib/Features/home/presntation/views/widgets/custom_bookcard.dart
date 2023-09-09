@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mybook/Core/utils/assets.dart';
 
-class CustomBookCard extends StatelessWidget {
+class CustomBookCoverImg extends StatelessWidget {
   final double height;
-  const CustomBookCard({
+  const CustomBookCoverImg({
     super.key,
     required this.height,
   });

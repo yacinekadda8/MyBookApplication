@@ -6,7 +6,7 @@ class FeaturedBooksListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-        double mqHeight = MediaQuery.of(context).size.height;
+    double mqHeight = MediaQuery.of(context).size.height;
 
     return SizedBox(
       height: mqHeight / 3.5,
@@ -15,7 +15,7 @@ class FeaturedBooksListView extends StatelessWidget {
           itemCount: 10,
           itemBuilder: (context, index) => const Padding(
                 padding: EdgeInsets.only(left: 8.0),
-                child: CustomBookCard(height: 3.5),
+                child: CustomBookCoverImg(height: 3.5),
               )),
     );
   }
