@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mybook/constant.dart';
 import 'package:mybook/Core/utils/assets.dart';
 import 'package:mybook/Core/utils/my_space.dart';
@@ -11,50 +12,53 @@ class BestSellerItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 300,
-      child: Row(
-        children: [
-          SizedBox(
-            height: 100,
-            child: AspectRatio(
-              aspectRatio: 2 / 3,
-              child: Container(
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8),
-                    image: const DecorationImage(
-                      image: AssetImage(MyAssets.testImage),
-                      fit: BoxFit.fill,
-                    )),
+    return GestureDetector(
+      onTap: ()=> context.go('/bookViewDetails'),
+      child: SizedBox(
+        width: 300,
+        child: Row(
+          children: [
+            SizedBox(
+              height: 100,
+              child: AspectRatio(
+                aspectRatio: 2 / 3,
+                child: Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(8),
+                      image: const DecorationImage(
+                        image: AssetImage(MyAssets.testImage),
+                        fit: BoxFit.fill,
+                      )),
+                ),
               ),
             ),
-          ),
-          MySpace.w30Space,
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                SizedBox(
-                  width: Get.width / 1.8,
-                  child: Text(
-                    'Harry Potter and the Goblet of Fire',
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    softWrap: true,
-                    style: MyStyles.textStyle20.copyWith(
-                      fontFamily: kgtSectraFine,
+            MySpace.w30Space,
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    width: Get.width / 1.8,
+                    child: Text(
+                      'Harry Potter and the Goblet of Fire',
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      softWrap: true,
+                      style: MyStyles.textStyle20.copyWith(
+                        fontFamily: kgtSectraFine,
+                      ),
                     ),
                   ),
-                ),
-                const Text(
-                  'J.K. Rowling',
-                  style: MyStyles.textStyle14,
-                ),
-                const BookRatingAndBuyCount()
-              ],
-            ),
-          )
-        ],
+                  const Text(
+                    'J.K. Rowling',
+                    style: MyStyles.textStyle14,
+                  ),
+                  const BookRatingAndBuyCount()
+                ],
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
