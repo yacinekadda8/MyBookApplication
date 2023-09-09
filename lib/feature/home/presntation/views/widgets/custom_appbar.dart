@@ -21,7 +21,7 @@ class CustomAppBar extends StatelessWidget {
             fit: BoxFit.fitHeight,
             height: 30,
             // width: 390,
-            colorFilter: const ColorFilter.mode(primaryColor, BlendMode.srcIn),
+            colorFilter: const ColorFilter.mode(kprimaryColor, BlendMode.srcIn),
           ),
           const Spacer(),
           IconButton(

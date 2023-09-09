@@ -16,7 +16,7 @@ class AppLogo extends StatelessWidget {
           fit: BoxFit.fitHeight,
           height: Get.width / 6,
           width: Get.width / 3,
-          colorFilter: const ColorFilter.mode(primaryColor, BlendMode.srcIn),
+          colorFilter: const ColorFilter.mode(kprimaryColor, BlendMode.srcIn),
           semanticsLabel: 'A red up arrow'),
     );
   }
