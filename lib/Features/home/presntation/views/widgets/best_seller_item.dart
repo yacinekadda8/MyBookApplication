@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mybook/constant.dart';
-import 'package:mybook/core/utils/assets.dart';
-import 'package:mybook/core/utils/my_space.dart';
-import 'package:mybook/core/utils/my_styles.dart';
-import 'package:mybook/feature/home/presntation/views/widgets/book_rating_and_buy_count.dart';
+import 'package:mybook/Core/utils/assets.dart';
+import 'package:mybook/Core/utils/my_space.dart';
+import 'package:mybook/Core/utils/my_styles.dart';
+import 'package:mybook/Features/home/presntation/views/widgets/book_rating_and_buy_count.dart';
 
 class BestSellerItem extends StatelessWidget {
   const BestSellerItem({super.key});

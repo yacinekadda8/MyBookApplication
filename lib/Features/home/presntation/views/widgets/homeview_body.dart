@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mybook/core/utils/my_space.dart';
-import 'package:mybook/core/utils/my_styles.dart';
-import 'package:mybook/feature/home/presntation/views/widgets/bestseller_listview.dart';
-import 'package:mybook/feature/home/presntation/views/widgets/custom_appbar.dart';
-import 'package:mybook/feature/home/presntation/views/widgets/featured_books_listview.dart';
+import 'package:mybook/Core/utils/my_space.dart';
+import 'package:mybook/Core/utils/my_styles.dart';
+import 'package:mybook/Features/home/presntation/views/widgets/bestseller_listview.dart';
+import 'package:mybook/Features/home/presntation/views/widgets/custom_appbar.dart';
+import 'package:mybook/Features/home/presntation/views/widgets/featured_books_listview.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});

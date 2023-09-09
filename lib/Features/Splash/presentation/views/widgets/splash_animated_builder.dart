@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mybook/feature/Splash/presentation/views/widgets/app_logo.dart';
+import 'package:mybook/Features/Splash/presentation/views/widgets/app_logo.dart';
 
 class SplashAnimatedBuilder extends StatelessWidget {
   const SplashAnimatedBuilder({

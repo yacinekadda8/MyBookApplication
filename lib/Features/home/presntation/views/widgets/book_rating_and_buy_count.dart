@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:mybook/core/utils/my_space.dart';
-import 'package:mybook/core/utils/my_styles.dart';
+import 'package:mybook/Core/utils/my_space.dart';
+import 'package:mybook/Core/utils/my_styles.dart';
 
 class BookRatingAndBuyCount extends StatelessWidget {
   const BookRatingAndBuyCount({
