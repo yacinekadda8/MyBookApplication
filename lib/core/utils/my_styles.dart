@@ -1,22 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:mybook/constant.dart';
 
 abstract class MyStyles {
-  static const titleSmall = TextStyle(
+  static const textStyle14 = TextStyle(
     fontSize: 14,
-    fontWeight: FontWeight.w500,
-    color: kprimaryColor,
+    fontWeight: FontWeight.w300,
   );
-  static const titleMedium = TextStyle(
+  static const textStyle16 = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+  );
+  static const textStyle18 = TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.w600,
   );
-  static const titleLarge = TextStyle(
+  static const textStyle20 = TextStyle(
     fontSize: 20,
-    fontWeight: FontWeight.bold,
+    fontWeight: FontWeight.w600,
+    // fontFamily: 'GT-Sectra-Fine',
   );
-  static const titleExtraLarge = TextStyle(
-    fontSize: 24,
-    fontWeight: FontWeight.w800,
+  static const textStyle30 = TextStyle(
+    fontSize: 30,
+    fontWeight: FontWeight.bold,
+    fontFamily: 'GT-Sectra-Fine',
   );
 }

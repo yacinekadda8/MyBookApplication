@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 const kTransation = Duration(microseconds: 250);
+const kgtSectraFine = 'GT-Sectra-Fine';
 const kprimaryColor = Color(0xFF402E32);
 //Primary color: This is the main color of your app,
 //and it should be used for the most important elements,

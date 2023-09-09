@@ -1,0 +1,62 @@
+import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
+import 'package:mybook/constant.dart';
+import 'package:mybook/core/utils/assets.dart';
+import 'package:mybook/core/utils/my_space.dart';
+import 'package:mybook/core/utils/my_styles.dart';
+import 'package:mybook/feature/home/presntation/views/widgets/book_rating_and_buy_count.dart';
+
+class BestSellerItem extends StatelessWidget {
+  const BestSellerItem({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 300,
+      child: Row(
+        children: [
+          SizedBox(
+            height: 106,
+            child: AspectRatio(
+              aspectRatio: 2 / 3,
+              child: Container(
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    image: const DecorationImage(
+                      image: AssetImage(MyAssets.testImage),
+                      fit: BoxFit.fill,
+                    )),
+              ),
+            ),
+          ),
+          MySpace.w30Space,
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: Get.width / 2.2,
+                  child: Text(
+                    'Harry Potter and the Goblet of Fire',
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    softWrap: true,
+                    style: MyStyles.textStyle20.copyWith(
+                      fontFamily: kgtSectraFine,
+                    ),
+                  ),
+                ),
+                const Text(
+                  'J.K. Rowling',
+                  style: MyStyles.textStyle14,
+                ),
+                const BookRatingAndBuyCount()
+              ],
+            ),
+          )
+        ],
+      ),
+    );
+  }
+}
