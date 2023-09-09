@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:mybook/constant.dart';
-import 'package:mybook/core/utils/assets.dart';
 import 'package:mybook/core/utils/my_space.dart';
 import 'package:mybook/core/utils/my_styles.dart';
-import 'package:mybook/feature/home/presntation/views/widgets/best_seller_item.dart';
+import 'package:mybook/feature/home/presntation/views/widgets/bestseller_listview.dart';
 import 'package:mybook/feature/home/presntation/views/widgets/custom_appbar.dart';
 import 'package:mybook/feature/home/presntation/views/widgets/featured_books_listview.dart';
 
@@ -13,22 +10,38 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.symmetric(horizontal: 30.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CustomAppBar(),
-          FeaturedBooksListView(),
-          MySpace.h40Space,
-          Text(
-            'Best Seller',
-            style: MyStyles.textStyle18,
+    return const CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+            child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 30.0),
+              child: CustomAppBar(),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 22.0),
+              child: FeaturedBooksListView(),
+            ),
+            MySpace.h40Space,
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 30.0),
+              child: Text(
+                'Best Seller',
+                style: MyStyles.textStyle18,
+              ),
+            ),
+            MySpace.h20Space,
+          ],
+        )),
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30.0),
+            child: BestSellerListView(),
           ),
-          MySpace.h20Space,
-          BestSellerItem(),
-        ],
-      ),
+        )
+      ],
     );
   }
 }

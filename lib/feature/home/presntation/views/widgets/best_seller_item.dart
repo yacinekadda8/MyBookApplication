@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:mybook/constant.dart';
 import 'package:mybook/core/utils/assets.dart';
@@ -17,12 +16,12 @@ class BestSellerItem extends StatelessWidget {
       child: Row(
         children: [
           SizedBox(
-            height: 106,
+            height: 100,
             child: AspectRatio(
               aspectRatio: 2 / 3,
               child: Container(
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
+                    borderRadius: BorderRadius.circular(8),
                     image: const DecorationImage(
                       image: AssetImage(MyAssets.testImage),
                       fit: BoxFit.fill,
@@ -36,7 +35,7 @@ class BestSellerItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  width: Get.width / 2.2,
+                  width: Get.width / 1.8,
                   child: Text(
                     'Harry Potter and the Goblet of Fire',
                     maxLines: 2,
