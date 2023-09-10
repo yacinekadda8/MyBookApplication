@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mybook/Features/home/presntation/views/widgets/custom_bookcard.dart';
+import 'package:mybook/Features/home/presntation/views/widgets/custom_book_cover_img.dart';
 
 class FeaturedBooksListView extends StatelessWidget {
   const FeaturedBooksListView({super.key});

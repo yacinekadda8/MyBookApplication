@@ -11,10 +11,10 @@ class BestSellerItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-       double width = MediaQuery.of(context).size.width;
+    double width = MediaQuery.of(context).size.width;
 
     return GestureDetector(
-      onTap: ()=> context.go('/bookViewDetails'),
+      onTap: () => context.go('/bookViewDetails'),
       child: SizedBox(
         width: 300,
         child: Row(
@@ -50,9 +50,12 @@ class BestSellerItem extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const Text(
-                    'J.K. Rowling',
-                    style: MyStyles.textStyle14,
+                const  Opacity(
+                    opacity: .7,
+                    child:  Text(
+                      'J.K. Rowling',
+                      style: MyStyles.textStyle14,
+                    ),
                   ),
                   const BookRatingAndBuyCount()
                 ],
