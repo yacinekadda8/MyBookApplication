@@ -13,12 +13,13 @@ class AppLogo extends StatelessWidget {
             double mqwidth = MediaQuery.of(context).size.width;
 
     return SizedBox(
-      child: SvgPicture.asset(MyAssets.mylogo,
+      child: Image.asset(MyAssets.mybookpng,
           fit: BoxFit.fitHeight,
           height: mqwidth / 6,
           width: mqwidth / 3,
-          colorFilter: const ColorFilter.mode(kprimaryColor, BlendMode.srcIn),
-          semanticsLabel: 'A red up arrow'),
+          // colorFilter: const ColorFilter.mode(kprimaryColor, BlendMode.srcIn),
+          // semanticsLabel: 'A red up arrow',
+          ),
     );
   }
 }

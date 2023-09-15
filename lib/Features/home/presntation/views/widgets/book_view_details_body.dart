@@ -3,9 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mybook/Core/utils/my_space.dart';
 import 'package:mybook/Core/utils/my_styles.dart';
 import 'package:mybook/Features/home/presntation/views/widgets/Custom_book_details_appbar.dart';
-import 'package:mybook/Features/home/presntation/views/widgets/book_rating_and_buy_count.dart';
 import 'package:mybook/Features/home/presntation/views/widgets/custom_book_cover_img.dart';
-import 'package:mybook/Features/home/presntation/views/widgets/rating_and_count.dart';
 
 class BookViewDetailsBody extends StatelessWidget {
   const BookViewDetailsBody({super.key});

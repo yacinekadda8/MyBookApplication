@@ -15,13 +15,23 @@ class CustomAppBar extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 20.0),
       child: Row(
         children: [
-          SvgPicture.asset(
-            MyAssets.mylogo,
-            fit: BoxFit.fitHeight,
-            height: 30,
-            // width: 390,
-            colorFilter: const ColorFilter.mode(kprimaryColor, BlendMode.srcIn),
+          SizedBox(
+            child: Image.asset(
+              MyAssets.mybookpng,
+              fit: BoxFit.fitHeight,
+              height: 40,
+              //width: mqwidth / 3,
+              // colorFilter: const ColorFilter.mode(kprimaryColor, BlendMode.srcIn),
+              // semanticsLabel: 'A red up arrow',
+            ),
           ),
+          // SvgPicture.asset(
+          //   MyAssets.mylogo,
+          //   fit: BoxFit.fitHeight,
+          //   height: 30,
+          //   // width: 390,
+          //   colorFilter: const ColorFilter.mode(kprimaryColor, BlendMode.srcIn),
+          // ),
           const Spacer(),
           IconButton(
             onPressed: () {},
