@@ -17,7 +17,8 @@ const ksecondaryColor = Color(0xffFF8960);
 // It should complement the primary color and not be too overwhelming.
 // Some popular secondary colors include purple, yellow, pink, and teal.
 
-const kneutralColor = Color(0xFFEAC696);
+//const kneutralColor = Color(0xFFEAC696);
+const kneutralColor = Color(0xFF8CBEAA);
 //This is a neutral color that is used for the background and other elements
 // that do not need to be as attention-grabbing. Some popular neutral colors
 // include white, black, gray, and beige.
