@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 //MediaQuery.of(context).size;
 const kTransation = Duration(microseconds: 250);
 const kgtSectraFine = 'GT-Sectra-Fine';
+
+//    ================================  COLORS ================================
+
 const kprimaryColor = Color(0xFF402E32);
 //Primary color: This is the main color of your app,
 //and it should be used for the most important elements,
@@ -19,4 +22,4 @@ const kneutralColor = Color(0xFFEAC696);
 // that do not need to be as attention-grabbing. Some popular neutral colors
 // include white, black, gray, and beige.
 
-const kgreyColor = Color(0xFFF6E5DF);
+const kgreyColor = Color(0xFFDFE0DF);
