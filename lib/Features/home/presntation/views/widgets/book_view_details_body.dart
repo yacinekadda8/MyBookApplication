@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:mybook/Core/utils/my_space.dart';
 import 'package:mybook/Core/utils/my_styles.dart';
 import 'package:mybook/Features/home/presntation/views/widgets/Custom_book_details_appbar.dart';
+import 'package:mybook/Features/home/presntation/views/widgets/book_actions.dart';
 import 'package:mybook/Features/home/presntation/views/widgets/custom_book_cover_img.dart';
-import 'package:mybook/Features/home/presntation/views/widgets/preview_and_price_buttons.dart';
 import 'package:mybook/Features/home/presntation/views/widgets/rating_and_count.dart';
-
-import '../../../../../constant.dart';
+import 'package:mybook/Features/home/presntation/views/widgets/similar_books_lv.dart';
 
 class BookViewDetailsBody extends StatelessWidget {
   const BookViewDetailsBody({super.key});
@@ -14,18 +13,18 @@ class BookViewDetailsBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
-    double h = MediaQuery.of(context).size.height;
-    return SizedBox(
+    return SingleChildScrollView(
       child: Column(
         //crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           const CustomBookDetailsAppbar(),
           MySpace.h20Space,
-          const CustomBookCoverImg(height: 2.5),
+          Container(
+            child: const CustomBookCoverImg(height: 2.5),
+          ),
           MySpace.h40Space,
           Container(
-            //color: Colors.red,
-            //margin: const EdgeInsets.symmetric(horizontal: 60),
+            // margin: const EdgeInsets.symmetric(horizontal: 30),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -50,33 +49,26 @@ class BookViewDetailsBody extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                 ),
                 MySpace.h30Space,
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    PreviewOrPriceButton(
-                        w: w,
-                        btnBgColor: kgreyColor,
-                        fontSize: 18,
-                        txtColor: kprimaryColor,
-                        txt: '19.99€',
-                        onTap: () {},
-                        topLeft: 15,
-                        bottomLeft: 15,
-                        topRight: 0,
-                        bottomRight: 0),
-                    PreviewOrPriceButton(
-                        w: w,
-                        btnBgColor: ksecondaryColor,
-                        fontSize: 16,
-                        txtColor: Colors.white,
-                        txt: 'Free preview',
-                        onTap: () {},
-                        topLeft: 0,
-                        bottomLeft: 0,
-                        topRight: 15,
-                        bottomRight: 15),
-                  ],
+                BookActions(w: w),
+                MySpace.h40Space,
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 30.0),
+                    child: Text(
+                      'You can also like',
+                      style: MyStyles.textStyle14.copyWith(
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ),
                 ),
+                MySpace.h10Space,
+                const Padding(
+                  padding: EdgeInsets.only(left: 30.0),
+                  child: SimilarBooksListView(),
+                ),
+                MySpace.h20Space,
               ],
             ),
           ),
