@@ -25,13 +25,6 @@ class CustomAppBar extends StatelessWidget {
               // semanticsLabel: 'A red up arrow',
             ),
           ),
-          // SvgPicture.asset(
-          //   MyAssets.mylogo,
-          //   fit: BoxFit.fitHeight,
-          //   height: 30,
-          //   // width: 390,
-          //   colorFilter: const ColorFilter.mode(kprimaryColor, BlendMode.srcIn),
-          // ),
           const Spacer(),
           IconButton(
             onPressed: () {},

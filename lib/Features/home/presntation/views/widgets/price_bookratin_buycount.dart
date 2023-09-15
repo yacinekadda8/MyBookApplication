@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mybook/Core/utils/my_styles.dart';
 import 'package:mybook/Features/home/presntation/views/widgets/rating_and_count.dart';
 
-class BookRatingAndBuyCount extends StatelessWidget {
-  const BookRatingAndBuyCount({
+class PriceAndBookRatingAndBuyCount extends StatelessWidget {
+  const PriceAndBookRatingAndBuyCount({
     super.key,
   });
 
@@ -21,7 +21,9 @@ class BookRatingAndBuyCount extends StatelessWidget {
           ),
         ),
         const Spacer(),
-        const RatingAndCount(),
+        const RatingAndCount(
+          mainAxisAlignment: MainAxisAlignment.center,
+        ),
       ],
     );
   }

@@ -4,7 +4,7 @@ import 'package:mybook/constant.dart';
 import 'package:mybook/Core/utils/assets.dart';
 import 'package:mybook/Core/utils/my_space.dart';
 import 'package:mybook/Core/utils/my_styles.dart';
-import 'package:mybook/Features/home/presntation/views/widgets/book_rating_and_buy_count.dart';
+import 'package:mybook/Features/home/presntation/views/widgets/price_bookratin_buycount.dart';
 
 class BestSellerItem extends StatelessWidget {
   const BestSellerItem({super.key});
@@ -50,14 +50,14 @@ class BestSellerItem extends StatelessWidget {
                       ),
                     ),
                   ),
-                const  Opacity(
+                  const Opacity(
                     opacity: .7,
-                    child:  Text(
+                    child: Text(
                       'J.K. Rowling',
                       style: MyStyles.textStyle14,
                     ),
                   ),
-                  const BookRatingAndBuyCount()
+                  const PriceAndBookRatingAndBuyCount()
                 ],
               ),
             )

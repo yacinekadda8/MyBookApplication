@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData().copyWith(
         scaffoldBackgroundColor: kneutralColor,
         textTheme: GoogleFonts.montserratTextTheme(),
+        
       ),
       debugShowCheckedModeBanner: false,
       title: 'MyBook',

@@ -4,6 +4,7 @@ import 'package:mybook/Core/utils/my_space.dart';
 import 'package:mybook/Core/utils/my_styles.dart';
 import 'package:mybook/Features/home/presntation/views/widgets/Custom_book_details_appbar.dart';
 import 'package:mybook/Features/home/presntation/views/widgets/custom_book_cover_img.dart';
+import 'package:mybook/Features/home/presntation/views/widgets/rating_and_count.dart';
 
 class BookViewDetailsBody extends StatelessWidget {
   const BookViewDetailsBody({super.key});
@@ -33,6 +34,7 @@ class BookViewDetailsBody extends StatelessWidget {
                     maxLines: 3,
                     style: MyStyles.textStyle30,
                   ),
+                  MySpace.h5Space,
                   Opacity(
                     opacity: .7,
                     child: Text(
@@ -42,27 +44,10 @@ class BookViewDetailsBody extends StatelessWidget {
                     ),
                   ),
                   MySpace.h10Space,
-                  const Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                  const RatingAndCount(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        FontAwesomeIcons.solidStar,
-                        color: Colors.yellow,
-                        size: 14,
-                        weight: 0.3,
-                      ),
-                      MySpace.w5SSpace,
-                      Text(
-                        '4.8',
-                        style: MyStyles.textStyle16,
-                      ),
-                      MySpace.w5SSpace,
-                      Opacity(
-                          opacity: .5,
-                          child: Text('(2390)', style: MyStyles.textStyle14)),
-                    ],
-                  )
+                  ),
+                  MySpace.h30Space,
                 ],
               ),
             ),
