@@ -7,6 +7,9 @@ import 'package:mybook/Features/search/presntation/view/search_view.dart';
 
 abstract class AppRouter {
   static const kSearchView = 'searchView';
+  static const kHomeView = 'homeView';
+  static const kBookViewDetails = 'bookViewDetails';
+
 
   static final GoRouter router = GoRouter(
     routes: <RouteBase>[
@@ -17,7 +20,7 @@ abstract class AppRouter {
         },
         routes: <RouteBase>[
           GoRoute(
-            path: 'homeView',
+            path: kHomeView,
             builder: (BuildContext context, GoRouterState state) {
               return const HomeView();
             },

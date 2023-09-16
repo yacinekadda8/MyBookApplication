@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:mybook/Core/utils/app_router.dart';
 import 'package:mybook/constant.dart';
 import 'package:mybook/Core/utils/assets.dart';
 import 'package:mybook/Core/utils/my_space.dart';
@@ -14,7 +15,7 @@ class BestSellerItem extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
 
     return GestureDetector(
-      onTap: () => context.go('/bookViewDetails'),
+      onTap: () => context.go('/${AppRouter.kBookViewDetails}'),
       child: SizedBox(
         width: 300,
         child: Row(
