@@ -4,8 +4,8 @@ import 'package:mybook/Features/home/data/models/book_model/book_model.dart';
 import '../../../../Core/errors/failures.dart';
 
 abstract class HomeRepo {
- Future<Either<Failures,List<BookModel>>> fetchBestSellerBooks();
-  Future<Either<Failures,List<BookModel>>>  fetchFeaturedBooks();
+  Future<Either<Failures, List<BookModel>>> fetchMostViewBooks();
+  Future<Either<Failures, List<BookModel>>> fetchFeaturedBooks();
 }
 
 // In brief, the repository pattern is a structural pattern that separates the logic
