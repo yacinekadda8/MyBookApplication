@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mybook/Core/utils/my_styles.dart';
+import 'package:mybook/Features/home/presntation/view_model/featured_books_cubit/featured_books_cubit.dart';
 import 'package:mybook/Features/home/presntation/views/widgets/custom_book_cover_img.dart';
+
+import '../../../../../Core/widgets/custom_err_msg.dart';
+import '../../../../../Core/widgets/custom_loading.dart';
 
 class FeaturedBooksListView extends StatelessWidget {
   const FeaturedBooksListView({super.key});
@@ -8,15 +14,28 @@ class FeaturedBooksListView extends StatelessWidget {
   Widget build(BuildContext context) {
     double mqHeight = MediaQuery.of(context).size.height;
 
-    return SizedBox(
-      height: mqHeight / 3.5,
-      child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemCount: 10,
-          itemBuilder: (context, index) => const Padding(
-                padding: EdgeInsets.only(left: 8.0),
-                child: CustomBookCoverImg(height: 3.5),
-              )),
+    return BlocBuilder<FeaturedBooksCubit, FeaturedBooksState>(
+      builder: (context, state) {
+        if (state is FeaturedBooksSuccess) {
+          return SizedBox(
+            height: mqHeight / 3.5,
+            child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: 10,
+                itemBuilder: (context, index) => const Padding(
+                      padding: EdgeInsets.only(left: 8.0),
+                      child: CustomBookCoverImg(height: 3.5),
+                    )),
+          );
+        } else if (state is FeaturedBooksFailure) {
+          return CustomErrorWidget(errMsg: state.errMsg);
+        } else if (state is FeaturedBooksLoading) {
+          return const CustomLoading();
+        } else {
+           return const CustomLoading();
+        }
+      },
     );
   }
 }
+
