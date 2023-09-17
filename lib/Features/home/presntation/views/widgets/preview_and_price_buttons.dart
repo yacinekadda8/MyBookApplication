@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mybook/Core/utils/my_styles.dart';
 
-import '../../../../../constant.dart';
 
 class PreviewOrPriceButton extends StatelessWidget {
   final String txt;
