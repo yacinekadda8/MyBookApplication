@@ -4,7 +4,7 @@ import 'package:mybook/Features/home/data/models/book_model/book_model.dart';
 import '../../../../Core/errors/failures.dart';
 
 abstract class HomeRepo {
-  Future<Either<Failures, List<BookModel>>> fetchMostViewBooks();
+  Future<Either<Failures, List<BookModel>>> fetchNewestBooks();
   Future<Either<Failures, List<BookModel>>> fetchFeaturedBooks();
 }
 
