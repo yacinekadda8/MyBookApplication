@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mybook/Core/utils/app_router.dart';
+import 'package:mybook/Features/home/data/models/book_model/book_model.dart';
+import 'package:mybook/Features/home/presntation/views/widgets/custom_book_cover_img.dart';
 import 'package:mybook/constant.dart';
-import 'package:mybook/Core/utils/assets.dart';
 import 'package:mybook/Core/utils/my_space.dart';
 import 'package:mybook/Core/utils/my_styles.dart';
 import 'package:mybook/Features/home/presntation/views/widgets/price_bookratin_buycount.dart';
 
 class BestSellerItem extends StatelessWidget {
-  const BestSellerItem({super.key});
+  final BookModel bookModel;
+  const BestSellerItem({super.key, required this.bookModel});
 
   @override
   Widget build(BuildContext context) {
@@ -21,19 +23,11 @@ class BestSellerItem extends StatelessWidget {
         child: Row(
           children: [
             SizedBox(
-              height: 100,
-              child: AspectRatio(
-                aspectRatio: 2 / 3,
-                child: Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      image: const DecorationImage(
-                        image: AssetImage(MyAssets.testImage),
-                        fit: BoxFit.fill,
-                      )),
-                ),
-              ),
-            ),
+                height: 100,
+                child: CustomBookCoverImg(
+                  height: 100,
+                  imgUrl: bookModel.volumeInfo.imageLinks.thumbnail,
+                )),
             MySpace.w30Space,
             Expanded(
               child: Column(
@@ -42,7 +36,7 @@ class BestSellerItem extends StatelessWidget {
                   SizedBox(
                     width: width / 1.8,
                     child: Text(
-                      'Harry Potter and the Goblet of Fire',
+                      bookModel.volumeInfo.title!,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       softWrap: true,
@@ -51,14 +45,17 @@ class BestSellerItem extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const Opacity(
+                  Opacity(
                     opacity: .7,
                     child: Text(
-                      'J.K. Rowling',
+                      bookModel.volumeInfo.authors![0],
                       style: MyStyles.textStyle14,
                     ),
                   ),
-                  const PriceAndBookRatingAndBuyCount()
+                   PriceAndBookRatingAndBuyCount(
+                    averageRating: bookModel.volumeInfo.averageRating ?? 0,
+                    ratingCount: bookModel.volumeInfo.ratingsCount ?? 0,
+                  )
                 ],
               ),
             )

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:mybook/Features/home/presntation/views/widgets/book_actions.dart';
 import 'package:mybook/Features/home/presntation/views/widgets/custom_book_cover_img.dart';
@@ -15,7 +14,9 @@ class BooksDetailsSection extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
 
     return Column(children: [
-      const CustomBookCoverImg(height: 2.5,imgUrl: 'https://edit.org/images/cat/book-covers-big-2019101610.jpg'),
+      const CustomBookCoverImg(
+          height: 2.5,
+          imgUrl: 'https://edit.org/images/cat/book-covers-big-2019101610.jpg'),
       MySpace.h40Space,
       Column(
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -39,6 +40,8 @@ class BooksDetailsSection extends StatelessWidget {
             MySpace.h10Space,
             const RatingAndCount(
               mainAxisAlignment: MainAxisAlignment.center,
+              averageRating: '',
+              ratingCount: '',
             ),
             MySpace.h30Space,
             BookActions(w: width),

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:mybook/Features/home/presntation/views/widgets/custom_book_cover_img.dart';
 
@@ -18,7 +17,10 @@ class SimilarBooksListView extends StatelessWidget {
                 padding: index == 0
                     ? const EdgeInsets.only(left: 0.0)
                     : const EdgeInsets.only(left: 8.0),
-                child: const CustomBookCoverImg(height: 3.5,imgUrl: 'https://edit.org/images/cat/book-covers-big-2019101610.jpg'),
+                child: const CustomBookCoverImg(
+                    height: 3.5,
+                    imgUrl:
+                        'https://edit.org/images/cat/book-covers-big-2019101610.jpg'),
               )),
     );
   }

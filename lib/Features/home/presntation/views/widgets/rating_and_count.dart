@@ -7,9 +7,12 @@ import 'package:mybook/Core/utils/my_styles.dart';
 
 class RatingAndCount extends StatelessWidget {
   final MainAxisAlignment mainAxisAlignment;
+  final String averageRating, ratingCount;
   const RatingAndCount({
     Key? key,
     required this.mainAxisAlignment,
+    required this.averageRating,
+    required this.ratingCount,
   }) : super(key: key);
 
   @override
@@ -17,8 +20,8 @@ class RatingAndCount extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: mainAxisAlignment,
-      children: const [
-        Icon(
+      children:  [
+       const Icon(
           FontAwesomeIcons.solidStar,
           color: Colors.yellow,
           size: 14,
@@ -26,7 +29,7 @@ class RatingAndCount extends StatelessWidget {
         ),
         MySpace.w5SSpace,
         Text(
-          '4.8',
+          averageRating,
           textAlign: TextAlign.center,
           style: MyStyles.textStyle16,
         ),
@@ -34,7 +37,7 @@ class RatingAndCount extends StatelessWidget {
         Opacity(
           opacity: .5,
           child: Text(
-            '(2390)',
+            '($ratingCount)',
             textAlign: TextAlign.center,
             style: MyStyles.textStyle14,
           ),

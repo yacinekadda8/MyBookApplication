@@ -33,7 +33,8 @@ class ServerFailure extends Failures {
           return ServerFailure("No internet connection!");
         }
         return ServerFailure(dioException.error.toString());
-        default: return ServerFailure('Something went wrong, Please try later!');
+      default:
+        return ServerFailure('Something went wrong, Please try later!');
     }
   }
   factory ServerFailure.fromResponse(int? statusCode, dynamic response) {

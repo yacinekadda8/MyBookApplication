@@ -8,16 +8,17 @@ class AppLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-            double mqwidth = MediaQuery.of(context).size.width;
+    double mqwidth = MediaQuery.of(context).size.width;
 
     return SizedBox(
-      child: Image.asset(MyAssets.mybookpng,
-          fit: BoxFit.fitHeight,
-          height: mqwidth / 6,
-          width: mqwidth / 3,
-          // colorFilter: const ColorFilter.mode(kprimaryColor, BlendMode.srcIn),
-          // semanticsLabel: 'A red up arrow',
-          ),
+      child: Image.asset(
+        MyAssets.mybookpng,
+        fit: BoxFit.fitHeight,
+        height: mqwidth / 6,
+        width: mqwidth / 3,
+        // colorFilter: const ColorFilter.mode(kprimaryColor, BlendMode.srcIn),
+        // semanticsLabel: 'A red up arrow',
+      ),
     );
   }
 }

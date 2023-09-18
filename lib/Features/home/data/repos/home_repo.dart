@@ -14,7 +14,7 @@ abstract class HomeRepo {
 //   the data source, which can be a database, web service, or any other
 //   data store.
 
-//   Benefits: 
+//   Benefits:
 //   The repository pattern promotes separation of concerns, making your codebase
 //   more maintainable and testable. It also allows you to switch data sources
 //   or storage mechanisms without affecting the rest of your application.

@@ -3,4 +3,5 @@ class MyAssets {
   static const mybookpng = 'assets/images/mybook.png';
   static const svglogo = 'assets/images/logo.svg';
   static const testImage = 'assets/images/Book1test.png';
+  static const bookplaceholder = 'assets/images/book_placeholder.jpg';
 }

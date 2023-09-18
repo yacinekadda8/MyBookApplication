@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
@@ -13,7 +12,7 @@ class CustomBookDetailsAppbar extends StatelessWidget {
     return Row(
       children: [
         IconButton(
-          onPressed: ()=> context.go('/homeView'),
+          onPressed: () => context.go('/homeView'),
           icon: const FaIcon(
             FontAwesomeIcons.xmark,
             size: 28,
