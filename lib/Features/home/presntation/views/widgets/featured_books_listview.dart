@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:mybook/Core/utils/app_router.dart';
+import 'package:mybook/Features/home/data/models/book_model/book_model.dart';
 import 'package:mybook/Features/home/presntation/view_model/featured_books_cubit/featured_books_cubit.dart';
 import 'package:mybook/Features/home/presntation/views/widgets/custom_book_cover_img.dart';
 
@@ -19,16 +22,23 @@ class FeaturedBooksListView extends StatelessWidget {
           return SizedBox(
             height: mqHeight / 3.8,
             child: ListView.builder(
-                physics: const BouncingScrollPhysics(),
-                scrollDirection: Axis.horizontal,
-                itemCount: state.books.length,
-                itemBuilder: (context, index) => Padding(
-                    padding: const EdgeInsets.only(left: 8.0),
+              physics: const BouncingScrollPhysics(),
+              scrollDirection: Axis.horizontal,
+              itemCount: state.books.length,
+              itemBuilder: (context, index) => Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: GestureDetector(
+                    onTap: () => context.push(
+                      "/${AppRouter.kBookViewDetails}",
+                      extra: state.books[index],
+                    ),
                     child: CustomBookCoverImg(
                         height: 3.5,
                         imgUrl: state.books[index].volumeInfo?.imageLinks
                                 ?.thumbnail ??
-                            ''))),
+                            ''),
+                  )),
+            ),
           );
         } else if (state is FeaturedBooksFailure) {
           return CustomErrorWidget(errMsg: state.errMsg);

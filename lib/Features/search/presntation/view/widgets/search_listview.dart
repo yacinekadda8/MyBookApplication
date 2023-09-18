@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class SearchResultListView extends StatelessWidget {
   const SearchResultListView({super.key});
 

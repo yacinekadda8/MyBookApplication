@@ -4,8 +4,11 @@ import 'package:mybook/Features/home/presntation/views/widgets/Custom_book_detai
 import 'package:mybook/Features/home/presntation/views/widgets/books_details_section.dart';
 import 'package:mybook/Features/home/presntation/views/widgets/similar_books_section.dart';
 
+import '../../../data/models/book_model/book_model.dart';
+
 class BookViewDetailsBody extends StatelessWidget {
-  const BookViewDetailsBody({super.key});
+  const BookViewDetailsBody({super.key, required this.bookModel});
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +18,7 @@ class BookViewDetailsBody extends StatelessWidget {
         children: [
           const CustomBookDetailsAppbar(),
           MySpace.h20Space,
-          const BooksDetailsSection(),
+          BooksDetailsSection(bookModel: bookModel),
           // relative height to let listview in last of screen
           SizedBox(height: height / 12),
           const SimilarBooksSection(),

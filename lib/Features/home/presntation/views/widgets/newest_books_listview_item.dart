@@ -17,7 +17,8 @@ class NewestBooksItem extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
 
     return GestureDetector(
-      onTap: () => context.go('/${AppRouter.kBookViewDetails}',extra: bookModel),
+      onTap: () =>
+          context.go('/${AppRouter.kBookViewDetails}', extra: bookModel),
       child: SizedBox(
         width: 300,
         child: Row(

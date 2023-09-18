@@ -8,7 +8,7 @@ part 'similar_books_state.dart';
 
 class SimilarBooksCubit extends Cubit<SimilarBooksState> {
   SimilarBooksCubit(this.homeRepo) : super(SimilarBooksInitial());
-    final HomeRepo homeRepo;
+  final HomeRepo homeRepo;
 
   Future<void> fetchSimilarBooks({required String categorey}) async {
     emit(SimilarBooksLoading());

@@ -5,25 +5,27 @@ import 'package:mybook/Features/home/presntation/views/widgets/rating_and_count.
 
 import '../../../../../Core/utils/my_space.dart';
 import '../../../../../Core/utils/my_styles.dart';
+import '../../../data/models/book_model/book_model.dart';
 
 class BooksDetailsSection extends StatelessWidget {
-  const BooksDetailsSection({super.key});
+  const BooksDetailsSection({super.key, required this.bookModel});
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
+    final double width = MediaQuery.of(context).size.width;
 
     return Column(children: [
-      const CustomBookCoverImg(
+      CustomBookCoverImg(
           height: 2.5,
-          imgUrl: 'https://edit.org/images/cat/book-covers-big-2019101610.jpg'),
+          imgUrl: bookModel.volumeInfo?.imageLinks?.thumbnail ?? ''),
       MySpace.h40Space,
       Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              'The Jungle Book',
+            Text(
+              bookModel.volumeInfo?.title ?? 'Untitle',
               textAlign: TextAlign.center,
               maxLines: 3,
               style: MyStyles.textStyle30,
@@ -32,19 +34,19 @@ class BooksDetailsSection extends StatelessWidget {
             Opacity(
               opacity: .7,
               child: Text(
-                'Rudyard Kipling',
+                bookModel.volumeInfo?.authors?[0] ?? 'unKnown',
                 style:
                     MyStyles.textStyle18.copyWith(fontWeight: FontWeight.w400),
               ),
             ),
             MySpace.h10Space,
-            const RatingAndCount(
+            RatingAndCount(
               mainAxisAlignment: MainAxisAlignment.center,
-              averageRating: '',
-              ratingCount: '',
+              averageRating: bookModel.volumeInfo!.averageRating.toString(),
+              ratingCount: bookModel.volumeInfo!.ratingsCount.toString(),
             ),
             MySpace.h30Space,
-            BookActions(w: width),
+            BookActions(w: width, bookModel: bookModel),
           ])
     ]);
   }

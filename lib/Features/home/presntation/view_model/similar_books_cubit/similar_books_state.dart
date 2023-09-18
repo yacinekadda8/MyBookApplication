@@ -8,12 +8,15 @@ sealed class SimilarBooksState extends Equatable {
 }
 
 final class SimilarBooksInitial extends SimilarBooksState {}
+
 final class SimilarBooksLoading extends SimilarBooksState {}
+
 final class SimilarBooksSuccess extends SimilarBooksState {
   final List<BookModel> books;
   const SimilarBooksSuccess(this.books);
 }
+
 final class SimilarBooksFailure extends SimilarBooksState {
-    final String errMsg;
+  final String errMsg;
   const SimilarBooksFailure(this.errMsg);
 }

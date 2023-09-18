@@ -19,15 +19,17 @@ class SimilarBooksListView extends StatelessWidget {
             height: mqHeight / 4.5,
             child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                itemCount: 10,
+                itemCount: state.books.length,
                 itemBuilder: (context, index) => Padding(
                       padding: index == 0
                           ? const EdgeInsets.only(left: 0.0)
                           : const EdgeInsets.only(left: 8.0),
-                      child: const CustomBookCoverImg(
-                          height: 3.5,
-                          imgUrl:
-                              'https://edit.org/images/cat/book-covers-big-2019101610.jpg'),
+                      child: CustomBookCoverImg(
+                        height: 3.5,
+                        imgUrl: state.books[index].volumeInfo!.imageLinks
+                                ?.thumbnail ??
+                            'https://editbook-cove019101610.jpg',
+                      ),
                     )),
           );
         } else if (state is SimilarBooksFailure) {
