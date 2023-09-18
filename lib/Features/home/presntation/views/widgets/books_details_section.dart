@@ -15,7 +15,7 @@ class BooksDetailsSection extends StatelessWidget {
     double width = MediaQuery.of(context).size.width;
 
     return Column(children: [
-      const CustomBookCoverImg(height: 2.5),
+      const CustomBookCoverImg(height: 2.5,imgUrl: 'https://edit.org/images/cat/book-covers-big-2019101610.jpg'),
       MySpace.h40Space,
       Column(
           crossAxisAlignment: CrossAxisAlignment.center,

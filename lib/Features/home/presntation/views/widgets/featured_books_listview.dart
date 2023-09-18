@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mybook/Core/utils/my_styles.dart';
 import 'package:mybook/Features/home/presntation/view_model/featured_books_cubit/featured_books_cubit.dart';
 import 'package:mybook/Features/home/presntation/views/widgets/custom_book_cover_img.dart';
 
@@ -20,11 +19,15 @@ class FeaturedBooksListView extends StatelessWidget {
           return SizedBox(
             height: mqHeight / 3.5,
             child: ListView.builder(
+                physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
-                itemCount: 10,
-                itemBuilder: (context, index) => const Padding(
-                      padding: EdgeInsets.only(left: 8.0),
-                      child: CustomBookCoverImg(height: 3.5),
+                itemCount: state.books.length,
+                itemBuilder: (context, index) => Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
+                      child: CustomBookCoverImg(
+                          height: 3.5,
+                          imgUrl: state
+                              .books[index].volumeInfo.imageLinks.thumbnail),
                     )),
           );
         } else if (state is FeaturedBooksFailure) {
@@ -32,10 +35,9 @@ class FeaturedBooksListView extends StatelessWidget {
         } else if (state is FeaturedBooksLoading) {
           return const CustomLoading();
         } else {
-           return const CustomLoading();
+          return const CustomLoading();
         }
       },
     );
   }
 }
-

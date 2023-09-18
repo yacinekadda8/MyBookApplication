@@ -18,7 +18,7 @@ class SimilarBooksListView extends StatelessWidget {
                 padding: index == 0
                     ? const EdgeInsets.only(left: 0.0)
                     : const EdgeInsets.only(left: 8.0),
-                child: const CustomBookCoverImg(height: 3.5),
+                child: const CustomBookCoverImg(height: 3.5,imgUrl: 'https://edit.org/images/cat/book-covers-big-2019101610.jpg'),
               )),
     );
   }
