@@ -24,10 +24,10 @@ class CustomBookCoverImg extends StatelessWidget {
             child: CachedNetworkImage(
               imageUrl: imgUrl,
               fit: BoxFit.fill,
-              placeholder: (context, url) => Image.asset(
-                MyAssets.bookplaceholder,
-                fit: BoxFit.fill,
-              ),
+              // placeholder: (context, url) => Image.network(
+              //   MyAssets.networkPlaceholder,
+              //   fit: BoxFit.fill,
+              // ),
               errorWidget: (context, url, error) =>
                   const Icon(Icons.image_not_supported),
             ),

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
+import 'package:mybook/Core/utils/app_router.dart';
+import 'package:mybook/Core/utils/assets.dart';
 import 'package:mybook/Core/widgets/custom_err_msg.dart';
 import 'package:mybook/Core/widgets/custom_loading.dart';
 import 'package:mybook/Features/home/presntation/view_model/similar_books_cubit/similar_books_cubit.dart';
@@ -24,11 +27,18 @@ class SimilarBooksListView extends StatelessWidget {
                       padding: index == 0
                           ? const EdgeInsets.only(left: 0.0)
                           : const EdgeInsets.only(left: 8.0),
-                      child: CustomBookCoverImg(
-                        height: 3.5,
-                        imgUrl: state.books[index].volumeInfo!.imageLinks
-                                ?.thumbnail ??
-                            'https://editbook-cove019101610.jpg',
+                      child: GestureDetector(
+                        onTap: () => GoRouter.of(context).push(
+                            '/${AppRouter.kBookViewDetails}',
+                            extra: state.books[index]),
+                        child: CustomBookCoverImg(
+                          height: 3.5,
+                          imgUrl: state.books[index].volumeInfo!.imageLinks
+                                  ?.thumbnail ??
+                              state.books[index].volumeInfo!.imageLinks
+                                  ?.smallThumbnail ??
+                              MyAssets.networkPlaceholder,
+                        ),
                       ),
                     )),
           );

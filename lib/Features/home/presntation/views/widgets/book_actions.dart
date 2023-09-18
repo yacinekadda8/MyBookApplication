@@ -25,7 +25,7 @@ class BookActions extends StatelessWidget {
             btnBgColor: kgreyColor,
             fontSize: 18,
             txtColor: kprimaryColor,
-            txt: '19.99€',
+            txt: 'FREE',
             onTap: () async {
               final Uri url = Uri.parse(
                   bookModel.accessInfo?.pdf?.downloadLink ??
@@ -47,7 +47,7 @@ class BookActions extends StatelessWidget {
             txt: getText(bookModel),
             onTap: () {
               final String? link = bookModel.volumeInfo?.previewLink ??
-                  bookModel.saleInfo?.buyLink ;
+                  bookModel.saleInfo?.buyLink;
               lunchCustomUrl(context, link);
             },
             topLeft: 0,

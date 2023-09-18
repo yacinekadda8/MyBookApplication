@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mybook/Core/utils/my_space.dart';
 import 'package:mybook/Core/utils/my_styles.dart';
-import 'package:mybook/Features/home/data/models/book_model/book_model.dart';
 import 'package:mybook/Features/home/presntation/views/widgets/newest_books_listview.dart';
 import 'package:mybook/Features/home/presntation/views/widgets/custom_appbar.dart';
 import 'package:mybook/Features/home/presntation/views/widgets/featured_books_listview.dart';

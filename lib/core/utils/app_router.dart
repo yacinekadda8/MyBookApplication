@@ -10,7 +10,6 @@ import 'package:mybook/Features/home/presntation/views/book_view_details.dart';
 import 'package:mybook/Features/home/presntation/views/home_view.dart';
 import 'package:mybook/Features/search/presntation/view/search_view.dart';
 
-import '../../Features/home/data/repos/home_repo.dart';
 
 abstract class AppRouter {
   static const kSearchView = 'searchView';

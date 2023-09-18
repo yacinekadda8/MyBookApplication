@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mybook/Core/utils/app_router.dart';
-import 'package:mybook/Features/home/data/models/book_model/book_model.dart';
 import 'package:mybook/Features/home/presntation/view_model/featured_books_cubit/featured_books_cubit.dart';
 import 'package:mybook/Features/home/presntation/views/widgets/custom_book_cover_img.dart';
 

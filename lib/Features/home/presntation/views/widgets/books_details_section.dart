@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mybook/Core/utils/assets.dart';
 import 'package:mybook/Features/home/presntation/views/widgets/book_actions.dart';
 import 'package:mybook/Features/home/presntation/views/widgets/custom_book_cover_img.dart';
 import 'package:mybook/Features/home/presntation/views/widgets/rating_and_count.dart';
@@ -18,7 +19,8 @@ class BooksDetailsSection extends StatelessWidget {
     return Column(children: [
       CustomBookCoverImg(
           height: 2.5,
-          imgUrl: bookModel.volumeInfo?.imageLinks?.thumbnail ?? ''),
+          imgUrl: bookModel.volumeInfo?.imageLinks?.thumbnail ?? bookModel.volumeInfo?.imageLinks?.smallThumbnail ??
+              MyAssets.networkPlaceholder),
       MySpace.h40Space,
       Column(
           crossAxisAlignment: CrossAxisAlignment.center,

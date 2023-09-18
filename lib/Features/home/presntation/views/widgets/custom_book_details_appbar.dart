@@ -12,7 +12,7 @@ class CustomBookDetailsAppbar extends StatelessWidget {
     return Row(
       children: [
         IconButton(
-          onPressed: () => context.go('/homeView'),
+          onPressed: () => context.pop(),
           icon: const FaIcon(
             FontAwesomeIcons.xmark,
             size: 28,
