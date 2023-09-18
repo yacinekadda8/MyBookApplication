@@ -23,13 +23,12 @@ class FeaturedBooksListView extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 itemCount: state.books.length,
                 itemBuilder: (context, index) => Padding(
-                      padding: const EdgeInsets.only(left: 8.0),
-                      child: CustomBookCoverImg(
-                          height: 3.5,
-                          imgUrl: state.books[index].volumeInfo?.imageLinks
-                                  ?.thumbnail ??
-                              ''),
-                    )),
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: CustomBookCoverImg(
+                        height: 3.5,
+                        imgUrl: state.books[index].volumeInfo?.imageLinks
+                                ?.thumbnail ??
+                            ''))),
           );
         } else if (state is FeaturedBooksFailure) {
           return CustomErrorWidget(errMsg: state.errMsg);
