@@ -24,7 +24,7 @@ class PriceAndBookRatingAndBuyCount extends StatelessWidget {
           ),
         ),
         const Spacer(),
-         RatingAndCount(
+        RatingAndCount(
           mainAxisAlignment: MainAxisAlignment.center,
           averageRating: averageRating.toString(),
           ratingCount: ratingCount.toString(),

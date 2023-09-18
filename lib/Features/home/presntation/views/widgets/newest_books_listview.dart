@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mybook/Core/widgets/custom_err_msg.dart';
 import 'package:mybook/Core/widgets/custom_loading.dart';
 import 'package:mybook/Features/home/presntation/view_model/newest_books_cubit/newest_books_cubit.dart';
-import 'package:mybook/Features/home/presntation/views/widgets/best_seller_item.dart';
+import 'package:mybook/Features/home/presntation/views/widgets/Newest_books_item.dart';
 
 class NewestBooksListView extends StatelessWidget {
   const NewestBooksListView({super.key});
@@ -21,7 +21,7 @@ class NewestBooksListView extends StatelessWidget {
             scrollDirection: Axis.vertical,
             itemBuilder: (context, index) => Padding(
               padding: const EdgeInsets.only(bottom: 20.0),
-              child: BestSellerItem(bookModel: state.books[index]),
+              child: NewestBooksItem(bookModel: state.books[index]),
             ),
           );
         } else if (state is NewestBooksFailure) {

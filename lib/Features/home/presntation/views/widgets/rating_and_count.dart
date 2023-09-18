@@ -20,8 +20,8 @@ class RatingAndCount extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: mainAxisAlignment,
-      children:  [
-       const Icon(
+      children: [
+        const Icon(
           FontAwesomeIcons.solidStar,
           color: Colors.yellow,
           size: 14,

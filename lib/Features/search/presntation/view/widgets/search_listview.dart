@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mybook/Features/home/presntation/views/widgets/best_seller_item.dart';
+import 'package:mybook/Features/home/presntation/views/widgets/Newest_books_item.dart';
 
 import '../../../../home/data/models/book_model/book_model.dart';
 

@@ -8,9 +8,9 @@ import 'package:mybook/Core/utils/my_space.dart';
 import 'package:mybook/Core/utils/my_styles.dart';
 import 'package:mybook/Features/home/presntation/views/widgets/price_bookratin_buycount.dart';
 
-class BestSellerItem extends StatelessWidget {
+class NewestBooksItem extends StatelessWidget {
   final BookModel bookModel;
-  const BestSellerItem({super.key, required this.bookModel});
+  const NewestBooksItem({super.key, required this.bookModel});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class BestSellerItem extends StatelessWidget {
                 height: 100,
                 child: CustomBookCoverImg(
                   height: 100,
-                  imgUrl: bookModel.volumeInfo.imageLinks.thumbnail,
+                  imgUrl: bookModel.volumeInfo?.imageLinks?.thumbnail ?? '',
                 )),
             MySpace.w30Space,
             Expanded(
@@ -36,7 +36,7 @@ class BestSellerItem extends StatelessWidget {
                   SizedBox(
                     width: width / 1.8,
                     child: Text(
-                      bookModel.volumeInfo.title!,
+                      bookModel.volumeInfo?.title! ?? 'unknown',
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       softWrap: true,
@@ -48,13 +48,13 @@ class BestSellerItem extends StatelessWidget {
                   Opacity(
                     opacity: .7,
                     child: Text(
-                      bookModel.volumeInfo.authors![0],
+                      bookModel.volumeInfo?.authors?[0] ?? 'unknown',
                       style: MyStyles.textStyle14,
                     ),
                   ),
-                   PriceAndBookRatingAndBuyCount(
-                    averageRating: bookModel.volumeInfo.averageRating ?? 0,
-                    ratingCount: bookModel.volumeInfo.ratingsCount ?? 0,
+                  PriceAndBookRatingAndBuyCount(
+                    averageRating: bookModel.volumeInfo?.averageRating?.toInt(),
+                    ratingCount: bookModel.volumeInfo?.ratingsCount ?? 0,
                   )
                 ],
               ),
